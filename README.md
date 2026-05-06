@@ -12,5 +12,7 @@ Ce dépôt contient la solution détaillée de l'examen de Structure de Données
 ## Compilation
 Utilisez un compilateur C (comme gcc) :
 ```bash
-gcc fichier.c -o programme
-./programme
+gcc partie1.c -o programme1
+./programme1
+gcc partie2.c -o programme2
+./programme2
