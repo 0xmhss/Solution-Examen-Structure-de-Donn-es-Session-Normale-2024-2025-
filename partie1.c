@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Définition de la structure [cite: 16-19]
+// Définition de la structure 
 typedef struct fichier {
     char nom[30];
     char type[30];
@@ -10,7 +10,7 @@ typedef struct fichier {
     struct fichier *suiv;
 } Fichier;
 
-// Q1: Créer un nouveau fichier [cite: 21]
+// Q1: Créer un nouveau fichier 
 Fichier *CreerFichier() {
     Fichier *nouveau = (Fichier*)malloc(sizeof(Fichier));
     printf("Entrer le nom de fichier: ");
@@ -23,14 +23,14 @@ Fichier *CreerFichier() {
     return nouveau;
 }
 
-// Q2: Ajouter au début [cite: 32]
+// Q2: Ajouter au début 
 Fichier *Ajouter_Debut(Fichier *f) {
     Fichier *nouveau = CreerFichier();
     nouveau->suiv = f;
     return nouveau;
 }
 
-// Q3: Ajouter à la fin [cite: 48]
+// Q3: Ajouter à la fin 
 Fichier *Ajouter_Fin(Fichier *f) {
     Fichier *nouveau = CreerFichier();
     if (f == NULL) return nouveau;
@@ -42,7 +42,7 @@ Fichier *Ajouter_Fin(Fichier *f) {
     return f;
 }
 
-// Q4: Rechercher par nom [cite: 67]
+// Q4: Rechercher par nom 
 int Rechercher_Nom(Fichier *f, char nomFichier[]) {
     Fichier *temp = f;
     while (temp != NULL) {
@@ -52,7 +52,7 @@ int Rechercher_Nom(Fichier *f, char nomFichier[]) {
     return 0;
 }
 
-// Q5: Supprimer au début [cite: 70]
+// Q5: Supprimer au début
 Fichier *Supprimer_Debut(Fichier *f) {
     if (f == NULL) return NULL;
     Fichier *temp = f;
@@ -61,7 +61,7 @@ Fichier *Supprimer_Debut(Fichier *f) {
     return f;
 }
 
-// Q6: Supprimer à la fin [cite: 82]
+// Q6: Supprimer à la fin 
 Fichier *Supprimer_Fin(Fichier *f) {
     if (f == NULL) return NULL;
     if (f->suiv == NULL) {
