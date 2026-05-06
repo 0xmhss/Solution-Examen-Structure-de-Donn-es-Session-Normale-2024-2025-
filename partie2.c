@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Définition de la structure [cite: 110-114]
+// Définition de la structure 
 typedef struct arbre_binaire_recherche {
     int racine;
     struct arbre_binaire_recherche *SAG;
     struct arbre_binaire_recherche *SAD;
 } ABR;
 
-// Q3: Fonction de création [cite: 116]
+// Q3: Fonction de création 
 ABR *Creer_ABR(int valeur, ABR *ABG, ABR *ABD) {
     ABR *nouveau = (ABR*)malloc(sizeof(ABR));
     nouveau->racine = valeur;
@@ -17,10 +17,10 @@ ABR *Creer_ABR(int valeur, ABR *ABG, ABR *ABD) {
     return nouveau;
 }
 
-// Q5: Affichage structuré {G, r, D} [cite: 122]
+// Q5: Affichage structuré {G, r, D} 
 void Affiche_arbre(ABR *a) {
     if (a == NULL) {
-        printf("_"); // Représente l'arbre vide [cite: 125]
+        printf("_"); // Représente l'arbre vide 
         return;
     }
     printf("{");
@@ -30,7 +30,7 @@ void Affiche_arbre(ABR *a) {
     printf("}");
 }
 
-// Q6: Parcours Infixe (croissant) [cite: 127]
+// Q6: Parcours Infixe 
 void parcours_infixe(ABR *a) {
     if (a != NULL) {
         parcours_infixe(a->SAG);
@@ -39,7 +39,7 @@ void parcours_infixe(ABR *a) {
     }
 }
 
-// Q7: Recherche d'une valeur [cite: 129]
+// Q7: Recherche d'une valeur 
 int recherche(ABR *a, int x) {
     if (a == NULL) return 0;
     if (a->racine == x) return 1;
@@ -47,16 +47,18 @@ int recherche(ABR *a, int x) {
     return recherche(a->SAD, x);
 }
 
-// Q8: Insertion [cite: 132]
+// Q8: Insertion 
 ABR* inserer(ABR *a, int x) {
     if (a == NULL) return Creer_ABR(x, NULL, NULL);
-    if (x <= a->racine) a->SAG = inserer(a->SAG, x); // Selon def Q2 [cite: 94]
-    else a->SAD = inserer(a->SAD, x);
+    if (x <= a->racine)
+        a->SAG = inserer(a->SAG, x); // Selon def Q2 
+    else 
+        a->SAD = inserer(a->SAD, x);
     return a;
 }
 
 int main() {
-    // Q4: Construction de l'arbre C [cite: 117-119]
+    // Q4: Construction de l'arbre C 
     ABR *C = Creer_ABR(34,
         Creer_ABR(29, Creer_ABR(24, NULL, NULL), Creer_ABR(32, Creer_ABR(31, NULL, NULL), NULL)),
         Creer_ABR(37, Creer_ABR(35, NULL, NULL), Creer_ABR(40, NULL, NULL))
